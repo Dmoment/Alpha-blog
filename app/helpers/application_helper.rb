@@ -7,7 +7,10 @@ module ApplicationHelper
   end
 
   def preferred_color
-    return current_user.color if (current_user.color && current_user.present?)
-    #fff
+    if (logged_in?)
+      return current_user.color
+   else  
+      return #fff
+   end
   end
 end
